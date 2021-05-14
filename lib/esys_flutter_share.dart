@@ -11,12 +11,13 @@ class Share {
   /// Sends a file to other apps.
   static Future<void> file(
       String title, String name, List<int> bytes, String mimeType,
-      {String text = ''}) async {
+      {String text = '',String packageName = ''}) async {
     Map argsMap = <String, String>{
       'title': '$title',
       'name': '$name',
       'mimeType': '$mimeType',
-      'text': '$text'
+      'text': '$text',
+      'packageName':'$packageName'
     };
 
     final tempDir = await getTemporaryDirectory();
